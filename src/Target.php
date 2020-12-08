@@ -72,7 +72,7 @@ abstract class Target
      *
      * @param array $messages profiling messages to be exported.
      */
-    abstract public function export(array $messages);
+    abstract public function export(array $messages): void;
 
     /**
      * Filters the given messages according to their categories.

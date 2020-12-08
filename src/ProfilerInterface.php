@@ -22,7 +22,7 @@ interface ProfilerInterface
      *
      * {@see endProfile()}
      */
-    public function begin(string $token, array $context = []);
+    public function begin(string $token, array $context = []): void;
 
     /**
      * Marks the end of a code block for profiling.
@@ -34,10 +34,10 @@ interface ProfilerInterface
      *
      * {@see begin()}
      */
-    public function end(string $token, array $context = []);
+    public function end(string $token, array $context = []): void;
 
     /**
      * Flushes profiling messages from memory to actual storage.
      */
-    public function flush();
+    public function flush(): void;
 }
