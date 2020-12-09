@@ -64,7 +64,7 @@ final class TargetTest extends TestCase
      */
     public function testFilterMessages(array $messages, array $categories, array $except, array $expected): void
     {
-        /* @var $target Target|\PHPUnit_Framework_MockObject_MockObject */
+        /* @var $target Target|\PHPUnit\Framework\MockObject\MockObject */
         $target = $this->getMockBuilder(Target::class)->getMockForAbstractClass();
 
         $target->categories = $categories;
@@ -78,9 +78,9 @@ final class TargetTest extends TestCase
      */
     public function testEnabled(): void
     {
-        /* @var $target Target|\PHPUnit_Framework_MockObject_MockObject */
+        /* @var $target Target|\PHPUnit\Framework\MockObject\MockObject */
         $target = $this->getMockBuilder(Target::class)
-            ->setMethods(['export'])
+            ->onlyMethods(['export'])
             ->getMock();
 
         $target->expects($this->exactly(0))->method('export');
@@ -90,7 +90,7 @@ final class TargetTest extends TestCase
         $target->collect([['category' => 'foo']]);
 
         $target = $this->getMockBuilder(Target::class)
-            ->setMethods(['export'])
+            ->onlyMethods(['export'])
             ->getMock();
 
         $target->expects($this->once())->method('export');

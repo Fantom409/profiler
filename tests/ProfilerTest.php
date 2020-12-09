@@ -93,10 +93,10 @@ class ProfilerTest extends TestCase
      */
     public function testFlushWithDispatch(): void
     {
-        /* @var $profiler Profiler|\PHPUnit_Framework_MockObject_MockObject */
+        /* @var $profiler Profiler|\PHPUnit\Framework\MockObject\MockObject*/
         $profiler = $this->getMockBuilder(Profiler::class)
             ->setConstructorArgs([$this->logger])
-            ->setMethods(['dispatch'])
+            ->onlyMethods(['dispatch'])
             ->getMock();
 
         $message = ['anything'];
