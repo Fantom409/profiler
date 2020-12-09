@@ -49,6 +49,36 @@ final class TargetTest extends TestCase
                 ['some'],
                 [['category' => 'foo']],
             ],
+            [
+                [['category' => 'foo']],
+                ['fo*'],
+                [],
+                [['category' => 'foo']],
+            ],
+            [
+                [['category' => 'foo']],
+                ['fo*'],
+                ['f*'],
+                [],
+            ],
+            [
+                [['category' => 'foo']],
+                ['fo*'],
+                ['*'],
+                [],
+            ],
+            [
+                [['category' => 'foo']],
+                ['ba*'],
+                ['*'],
+                [],
+            ],
+            [
+                [['category' => 'foo']],
+                ['ba*'],
+                [],
+                [],
+            ],
         ];
     }
 

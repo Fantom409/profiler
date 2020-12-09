@@ -100,7 +100,7 @@ abstract class Target
                 foreach ($this->except as $category) {
                     $prefix = rtrim($category, '*');
                     if (($message['category'] === $category || $prefix !== $category)
-                        && strpos($message['category'], $prefix) === 0) {
+                        && (empty($prefix) || strpos($message['category'], $prefix) === 0)) {
                         $matched = false;
                         break;
                     }
